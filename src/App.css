@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.texto{
+    font-family: "Poppins";
+}
+
+main { 
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/capa-otimizado.jpg");
+  background-size: cover;
+  background-position: bottom;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+#span-btn{
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+
+#conteiner{
+  display: flex;
+  flex-wrap: wrap;
+  width: 70vw;
+  height: 70vh;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card { 
+  display: flex;
+  flex-direction: column;
+  height: 20vh;
+  width: 40%;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px;
+  height: auto;
+  overflow: auto;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/card1-otimizado.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.card:nth-child(2)::before {
+  background-image: url("/card2-otimizado.jpg");
+}
+
+.card:nth-child(3)::before {
+  background-image: url("/card3-otimizado.jpg");
+}
+
+.card:nth-child(4)::before {
+  background-image: url("/card4-otimizado.jpg");
+}
+
+.text-card{
+  color: white;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+  z-index: 1;
+  position: relative;
+}
