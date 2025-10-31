@@ -45,11 +45,20 @@ export default function App() {
   }
 
   return (
-    <main ref={mainRef} className=" min-h-screen bg-gradient-to-br from-green-50 via-emerald-100 to-teal-100 relative overflow-hidden">
+    <main 
+      ref={mainRef} 
+      className="min-h-screen bg-gradient-to-br from-green-50 via-emerald-100 to-teal-100 relative overflow-x-hidden"
+      style={{
+        minHeight: '100vh',
+        height: 'auto',
+        overflowY: 'auto',
+        WebkitOverflowScrolling: 'touch',
+      }}
+    >
 
       {/* Elementos decorativos */}
-      <div className="absolute top-10 left-10 w-40 h-40 bg-green-200/30 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-20 right-20 w-52 h-52 bg-emerald-300/20 rounded-full blur-3xl"></div>
+      <div className="absolute top-10 left-10 w-40 h-40 bg-green-200/30 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
+      <div className="absolute bottom-20 right-20 w-52 h-52 bg-emerald-300/20 rounded-full blur-3xl pointer-events-none"></div>
 
       {/* Conteúdo */}
       <div className="relative z-10 flex flex-col items-center px-4 py-16">
