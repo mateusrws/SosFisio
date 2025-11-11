@@ -149,7 +149,7 @@ export default function FisioResp() {
                                 link="https://www.scielo.br/j/jbpneu/a/4y7hFzHCx3HwdWpjpD9yNQJ/?lang=pt"
                                 category="respiratoria"
                                 author="SciElo Brazil"
-            
+                                downloadUrl = "C:\Users\mateu\sosfisio\artigos\Primeiros Socorros – Desengasgo.pdf"
                                 date="Julho de 2017"
                         />
                     </div>

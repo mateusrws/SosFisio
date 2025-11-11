@@ -185,6 +185,15 @@ export default function PriSoc() {
                             readTime="7 min"
                             date="dezembro de 2024"
                         />
+                        <ArticleCard 
+                            title="Primeiros socorros - desengasgo"
+                            summary=""
+                            link="#"
+                            category="primeiros-socorros"
+                            author="SosFisio"
+                            date="dezembro de 2024"
+                            down
+                        />
                     </div>
                 </div>
             </div>
@@ -285,8 +294,6 @@ export default function PriSoc() {
                                 </div>
                             </div>
                         </div>
-
-                        {/* Video Card 3 */}
                         <div className="group bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-rose-100 hover:border-rose-300">
                             <div className="relative">
                                 <div className="aspect-video overflow-hidden rounded-t-3xl">
@@ -316,8 +323,7 @@ export default function PriSoc() {
                                         href="https://www.youtube.com/watch?v=dM28SGRdAfE&pp=ygUddsOtZGVvcyBkZSBwcmltZWlyb3Mgc29jb3Jyb3M%3D"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-600 text-white text-sm font-semibold hover:bg-rose-700 transition-colors"
-                                    >
+                                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-600 text-white text-sm font-semibold hover:bg-rose-700 transition-colors">
                                         Assistir
                                         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                                             <path d="M6 4a2 2 0 012-2h6a2 2 0 012 2v6a2 2 0 11-4 0V7.414l-7.293 7.293a1 1 0 01-1.414-1.414L12.586 6H10a2 2 0 01-2-2z" />
@@ -326,6 +332,45 @@ export default function PriSoc() {
                                 </div>
                             </div>
                         </div>
+                        <div className="group bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-rose-100 hover:border-rose-300">
+                            <div className="relative">
+                                <div className="aspect-video overflow-hidden rounded-t-3xl">
+                                    <iframe 
+                                        className="w-full h-full"
+                                        src="https://www.youtube.com/embed/3w4_s6KuR0k?si=wn058vhyR_xswCaD"
+                                        title="Controle de Hemorragias"
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerPolicy="strict-origin-when-cross-origin"
+                                        allowFullScreen
+                                    ></iframe>
+                                </div>
+                            </div>
+                            <div className="p-6">
+                                <h3 className="text-xl font-bold text-gray-800 mb-2">
+                                Veja o que mudou nas manobras de desengasgo - Samu 192 Ceará
+                                </h3>
+                                <p className="text-gray-600 text-sm mb-4">
+                                A manobra utilizada em situações de engasgo grave em adultos, crianças e bebês passou por atualizações.
+                                </p>
+                                <div className="flex items-center justify-between">
+                                    <span className="text-rose-600 font-semibold text-sm">
+                                        Duração: 2 min 23 seg
+                                    </span>
+                                    <a
+                                        href="https://www.youtube.com/watch?v=3w4_s6KuR0k"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-600 text-white text-sm font-semibold hover:bg-rose-700 transition-colors">
+                                        Assistir
+                                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M6 4a2 2 0 012-2h6a2 2 0 012 2v6a2 2 0 11-4 0V7.414l-7.293 7.293a1 1 0 01-1.414-1.414L12.586 6H10a2 2 0 01-2-2z" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
