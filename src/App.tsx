@@ -15,13 +15,13 @@ export default function App() {
   useEffect(() => {
     const tl = gsap.timeline()
 
-    // Animação inicial - fade in dos elementos principais
+    // Animação inicial - fade in dos elementos principais (valores Y ajustados)
     tl.fromTo(titleRef.current, 
-      { opacity: 0, y: -50 }, 
+      { opacity: 0, y: -30 }, 
       { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
     )
     .fromTo(subtitleRef.current, 
-      { opacity: 0, y: 30 }, 
+      { opacity: 0, y: 20 }, 
       { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }, 
       "-=0.5"
     )
@@ -31,10 +31,10 @@ export default function App() {
       "-=0.3"
     )
 
-    // Animação dos cards - entrada escalonada
+    // Animação dos cards - entrada escalonada (valores ajustados)
     cardsRef.current.forEach((card, index) => {
       if (card) {
-        gsap.set(card, { opacity: 0, x: index % 2 === 0 ? -100 : 100, y: 50 })
+        gsap.set(card, { opacity: 0, x: index % 2 === 0 ? -50 : 50, y: 30 })
         
         tl.to(card, {
           opacity: 1,
@@ -46,14 +46,14 @@ export default function App() {
       }
     })
 
-    // Animação de hover para os cards
+    // Animação de hover para os cards (reduzido para evitar overflow)
     cardsRef.current.forEach((card) => {
       if (card) {
         card.addEventListener('mouseenter', () => {
           gsap.to(card, {
-            scale: 1.05,
-            y: -10,
-            duration: 0.1,
+            scale: 1.03,
+            y: -5,
+            duration: 0.3,
             ease: "power2.out"
           })
         })
@@ -62,7 +62,7 @@ export default function App() {
           gsap.to(card, {
             scale: 1,
             y: 0,
-            duration: 0.1,
+            duration: 0.3,
             ease: "power2.out"
           })
         })
@@ -73,7 +73,7 @@ export default function App() {
     if (buttonRef.current) {
       buttonRef.current.addEventListener('mouseenter', () => {
         gsap.to(buttonRef.current, {
-          scale: 1.1,
+          scale: 1.05,
           duration: 0.2,
           ease: "power2.out"
         })
@@ -120,7 +120,7 @@ export default function App() {
     
     if (clickedCard) {
       gsap.to(clickedCard, {
-        scale: 0.95,
+        scale: 0.97,
         duration: 0.1,
         yoyo: true,
         repeat: 1,
@@ -132,36 +132,36 @@ export default function App() {
   return (
     <main 
       ref={mainRef} 
-      className='min-h-screen bg-gradient-to-br from-green-50 via-emerald-100 to-teal-100 relative overflow-hidden'
+      className='min-h-screen bg-gradient-to-br from-green-50 via-emerald-100 to-teal-100 relative overflow-x-hidden'
     >
       {/* Background decorative elements */}
-      <div className="absolute top-20 left-20 w-64 h-64 bg-green-200/30 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-32 right-32 w-80 h-80 bg-emerald-300/20 rounded-full blur-3xl animate-bounce"></div>
-      <div className="absolute top-1/2 left-1/4 w-48 h-48 bg-teal-200/25 rounded-full blur-2xl"></div>
+      <div className="absolute top-20 left-20 w-64 h-64 bg-green-200/30 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
+      <div className="absolute bottom-32 right-32 w-80 h-80 bg-emerald-300/20 rounded-full blur-3xl animate-bounce pointer-events-none"></div>
+      <div className="absolute top-1/2 left-1/4 w-48 h-48 bg-teal-200/25 rounded-full blur-2xl pointer-events-none"></div>
       
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-12">
-        <div className="text-center mb-16">
+      <div className="relative z-10 flex flex-col items-center justify-start min-h-screen px-6 py-16 md:py-20">
+        <div className="text-center mb-16 mt-8">
           <h1 
             ref={titleRef}
-            className='text-6xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent drop-shadow-lg mb-6'
+            className='text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent drop-shadow-lg mb-6'
           >
             SosFisio
           </h1>
           
           <p 
             ref={subtitleRef}
-            className='text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium'
+            className='text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium px-4'
           >
             Cuidar do movimento é cuidar da vida. Explore conteúdos que inspiram saúde e bem-estar.
           </p>
 
           <button 
             ref={buttonRef}
-            className='mt-10 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105'
+            className='mt-10 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300'
             onClick={() => {
               containerRef.current?.scrollIntoView({ 
                 behavior: 'smooth',
-                block: 'center'
+                block: 'start'
               })
             }}
           >
@@ -169,7 +169,7 @@ export default function App() {
           </button>
         </div>
 
-        <div ref={containerRef} className='w-full max-w-6xl mx-auto'>
+        <div ref={containerRef} className='w-full max-w-6xl mx-auto pb-16'>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
             {/* Card 1 - Fisioterapia Respiratória */}
             <div 
@@ -268,9 +268,10 @@ export default function App() {
               </div>
             </div>
 
+            {/* Card 5 - Fisioterapia Reumatológica e Oncológica */}
             <div
               ref={addToRefs}
-              className='group bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-rose-100 hover:border-rose-300 cursor-pointer'
+              className='group bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-rose-100 hover:border-rose-300 cursor-pointer md:col-span-2'
               onClick={() => handleCardClick('Reumatológica')}
             >
               <div className="bg-gradient-to-r from-rose-500 to-orange-600 p-8">
@@ -291,13 +292,6 @@ export default function App() {
                 </p>
               </div>
             </div>
-
-
-
-
-
-
-            
           </div>
         </div>
       </div>
