@@ -193,6 +193,13 @@ export default function PriSoc() {
                             author="SosFisio"
                             downloadUrl="../../../artigos/Primeiros Socorros – Desengasgo.pdf"
                         />
+                        <ArticleCard 
+                            title="Adult Basic Life Support: 2025 American Heart Association Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care"
+                            summary="The American Heart Association's 2025 Adult Basic Life Support Guidelines build upon prior versions with updated recommendations for assessment and management of persons with cardiac arrest, as well as respiratory arrest and foreign-body airway obstruction."
+                            link="https://pubmed.ncbi.nlm.nih.gov/41122888"
+                            category="primeiros-socorros"
+                            author="Monica E Kleinman, Jason E Buick, Nicole Huber, Ahamed H Idris, Michael Levy, Sean G Morgan, Michelle M J Nassal, Matthew R Neth, Tatsuya Norii, Mark E Nunnally, Amber J Rodriguez, Brian K Walsh, Ian R Drennan"
+                        />
                     </div>
                 </div>
             </div>
